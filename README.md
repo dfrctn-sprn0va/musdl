@@ -1,140 +1,29 @@
 <div align="center">
-  <img src=".github/ytmdl.png">
+<h1>musdl - Music Downloader</h1>
+<h4>Download songs with metadata</h4>
 </div>
 
-<div align="center">
-<h1>YouTube Music Downloader</h1>
-<h4>Download songs from YouTube by getting the audio from YouTube and the metadata from sources like Itunes, Spotify, Gaana etc.</h4>
-</div>
-
-<div align="center" width="60%" height="auto">
-  <br>
-    <img src=".github/ytmdl.gif">
-</div>
-
-<div align="center">
-
-<br/>
-
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)<br/><br/>
-<img src="https://img.shields.io/badge/Maintained%3F-Yes-blueviolet?style=for-the-badge">
-![Travis (.org)](https://img.shields.io/travis/deepjyoti30/ytmdl?style=for-the-badge) ![[RepoStatus](https://repostatus.deepjyoti30.dev)](https://apis.deepjyoti30.dev/repostatus/badge?repo=deepjyoti30%2Fytmdl&style=for-the-badge) [![License](https://img.shields.io/badge/License-MIT-pink.svg?style=for-the-badge)](LICENSE.md) ![PyPI](https://img.shields.io/pypi/v/ytmdl?style=for-the-badge) ![AUR](https://img.shields.io/aur/version/ytmdl?color=red&style=for-the-badge) [![Downloads](https://img.shields.io/badge/dynamic/json?style=for-the-badge&maxAge=86400&label=downloads&query=%24.total_downloads&url=https%3A%2F%2Fapi.pepy.tech%2Fapi%2Fprojects%2Fytmdl)](https://img.shields.io/badge/dynamic/json?style=for-the-badge&maxAge=86400&label=downloads&query=%24.total_downloads&url=https%3A%2F%2Fapi.pepy.tech%2Fapi%2Fprojects%2Fytmdl) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-lightblue.svg?style=for-the-badge)](http://makeapullrequest.com) [![Telegram](https://img.shields.io/badge/Telegram-YTMDL-blue.svg?style=for-the-badge)](https://t.me/ytmdl)
-
-<p>
-<a href="https://ko-fi.com/deepjyoti30"><img src="https://raw.githubusercontent.com/adi1090x/files/master/other/kofi.png" alt="Support me on ko-fi"></a>
-</p>
-
-<br/>
-
-### \[[Web App](#web-app)] \[[Why This?](#why-this)] \[[Support the Project](#support-the-project)] \[[Installation](#installation)] \[[Configuration](#configuration)] \[[WiKi](https://github.com/deepjyoti30/ytmdl/wiki/)]
-
-<br/>
-</div>
-
-## Web App
-
-Ytmdl also has an web app, you can try it out [here](https://ytmdl.deepjyoti30.dev/)
-
-## Why this?
-
-This app downloads a song by getting the audio from Youtube sources **using** youtube-dl and then adds song information like
-artist name, album name, release date, thumbnail etc by fetching it from sources like Itunes, Spotify, Gaana and other sources.
-
-**NO**. YoutubeDL doesn't do that. All youtube-dl does is lets you download audio from a video that you specify.
 **This app is not yet another youtube-dl clone.**
-
-## Support the Project?
-
-Help the development of this project by becoming a backer or a sponsor.
-
-### [Become a Backer](https://opencollective.com/ytmdl#backer)
-
-### [Become a sponsor](https://opencollective.com/ytmdl#sponsor)
-
-If you like my work, consider buying me a coffee or donating. In case you want to become a patron, join my [Pateron](https://www.patreon.com/deepjyoti30)
-
-<p align="left">
-<a href="https://www.paypal.me/deepjyoti30" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/paypal-deepjyoti30-blue?style=for-the-badge&logo=paypal"></a>
-<a href="https://www.patreon.com/deepjyoti30" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/Patreon-deepjyoti30-orange?style=for-the-badge&logo=patreon"></a>
-<a href="https://ko-fi.com/deepjyoti30" target="_blank"><img alt="undefined" src="https://img.shields.io/badge/KoFi-deepjyoti30-red?style=for-the-badge&logo=ko-fi"></a>
-</p>
 
 ## Requirements
 
-- Python 3.6.1
+- Python 3.12
 - ffmpeg
 
 ## Installation
 
-- [PyPi](#pypi)
-- [Arch Linux](#arch-linux)
-- [Gentoo](#gentoo)
-- [NixOS](#nixos)
-- [Windows](#windows)
+- [pip](#pip)
 - [Manual](#manual)
 
-### PyPI
+### pip
 
 ```console
-pip install ytmdl
-```
-
-> NOTE: System wide installation requires `sudo`
-
-### Arch Linux
-
-`ytmdl` is available in AUR as `ytmdl`. It can be found [here](https://aur.archlinux.org/packages/ytmdl/)
-
-> NOTE: The git version is availble as `ytmdl-git` in AUR.
-
-### Gentoo
-
-`ytmdl` can be installed in Gentoo by the following commands
-
-```console
-# First set up src_prepare-overlay (as root)
-emerge -av --noreplace app-eselect/eselect-repository
-eselect repository enable src_prepare-overlay
-emaint sync -r src_prepare-overlay
-# Finally emerge ytmdl (as root)
-emerge -av --autounmask net-misc/ytmdl
-```
-
-Available in **src_prepare-overlay** [here](https://gitlab.com/src_prepare/src_prepare-overlay)
-
-### NixOS
-
-`ytmdl` can be installed using Nix with the command
-
-```console
-nix-env -iA nixos.ytmdl
-```
-
-### Windows
-
-You need to install `ffmpeg` in order for `ytmdl` to work properly. This can be done by downloading the `ffmpeg` binary from [here](https://ffmpeg.org/download.html). Once downloaded, extract the file and find the `ffmpeg.exe` file. Copy the directory's path and add it to PATH in the following way.
-
-```console
-setx path "%path%;C:\your\path\here\"
-```
-
-Once `ffmpeg` is installed, install `ytmdl` using the following command
-
-```console
-pip install ytmdl --upgrade
-```
-
-> NOTE: You'll need to have Python 3.6.1 or more installed.
-
-Optionally, also install the latest version of `downloader-cli` and `simber` using the following command:
-
-```console
-pip install simber downloader-cli --upgrade
+pip install git+https://github.com/dfrctn-sprn0va/musdl.git
 ```
 
 ### Manual
 
-You can manually install `ytmdl` by cloning this repository and running the `setup.py` script.
+You can manually install `musdl` by cloning this repository and running the `setup.py` script.
 
 1. Install `setuptools` if it isn't already:
 
@@ -145,20 +34,20 @@ You can manually install `ytmdl` by cloning this repository and running the `set
 1. Clone this repo:
 
    ```console
-   git clone https://github.com/deepjyoti30/ytmdl
+   git clone https://github.com/dfrctn-sprn0va/musdl.git
    ```
 
-1. Move into the `ytmdl` directory and run the `setup.py` script:
+1. Move into the `musdl` directory and run the `setup.py` script:
 
    ```console
-   cd ytmdl
-   sudo python setup.py install
+   cd musdl
+   python setup.py install
    ```
 
 ## Usage
 
 ```console
-usage: ytmdl [-h] [-q] [-o OUTPUT_DIR] [--song SONG-METADATA]
+usage: musdl [-h] [-q] [-o OUTPUT_DIR] [--song SONG-METADATA]
              [--choice CHOICE] [--artist ARTIST] [--album ALBUM]
              [--disable-metaadd] [--skip-meta] [-m] [--itunes-id ITUNES_ID]
              [--spotify-id SPOTIFY_ID] [--disable-sort] [--ask-meta-name]
@@ -284,17 +173,17 @@ Logger:
 
 ### Setup
 
-The defaults can be changed by editing the config file in ytmdl folder in your .config folder
+The defaults can be changed by editing the config file in musdl folder in your .config folder
 
-The config will be created automatically the first time you run `ytmdl` and will be present in ~/.config/ytmdl/config
+The config will be created automatically the first time you run `musdl` and will be present in ~/.config/musdl/config
 
 However, it can be created manually by the following command
 
 ```console
-mkdir -p ~/.config/ytmdl; curl https://raw.githubusercontent.com/deepjyoti30/ytmdl/master/examples/config > ~/.config/ytmdl/config
+mkdir -p ~/.config/musdl; curl https://raw.githubusercontent.com/deepjyoti30/musdl/master/examples/config > ~/.config/musdl/config
 ```
 
-Above command will download the config from the repo and save it in the `~/.config/ytmdl/` directory.
+Above command will download the config from the repo and save it in the `~/.config/musdl/` directory.
 
 ### Supported Options
 

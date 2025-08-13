@@ -6,7 +6,7 @@ import shutil
 from html import unescape
 from re import sub
 
-from ytmdl import defaults
+from musdl import defaults
 from simber import Logger
 
 logger = Logger("Dir")
@@ -24,7 +24,7 @@ def __replace_special_characters(passed_name: str) -> str:
 def get_abs_path(path_passed: str) -> str:
     """
     Get the absolute path by removing special path directives
-    that `ytmdl` supports.
+    that `musdl` supports.
     """
     if "$" not in path_passed:
         return path_passed

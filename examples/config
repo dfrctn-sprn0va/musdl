@@ -1,5 +1,5 @@
 #*****************************************#
-#*-------------config for ytmdl-----------#
+#*-------------config for musdl-----------#
 #
 #-----------------------------------------#
 #------PLEASE DON'T LEAVE ANY BLANK LINES---#
@@ -51,7 +51,7 @@
 # itunes, spotify, gaana, deezer, lastfm, musicbrainz, saavn.
 # ---------
 #
-# Please check the github page of ytmdl for more information.
+# Please check the github page of musdl for more information.
 #
 #METADATA_PROVIDERS = "itunes, spotify, gaana"
 #

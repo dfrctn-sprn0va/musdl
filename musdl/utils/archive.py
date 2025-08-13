@@ -7,7 +7,7 @@ from typing import List, Union
 from simber import Logger
 from io import TextIOWrapper
 
-from ytmdl.yt import extract_video_id
+from musdl.yt import extract_video_id
 
 
 # Create logger

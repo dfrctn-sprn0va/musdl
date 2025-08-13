@@ -24,10 +24,10 @@ import requests
 import os
 from rich.prompt import IntPrompt
 
-from ytmdl import prepend, defaults
+from musdl import prepend, defaults
 from simber import Logger
-from ytmdl.meta import preconfig
-from ytmdl.dir import __replace_special_characters
+from musdl.meta import preconfig
+from musdl.dir import __replace_special_characters
 # import traceback
 
 logger = Logger("song")

@@ -1,10 +1,10 @@
-"""Contain all the core functions for ytmdl"""
+"""Contain all the core functions for musdl"""
 
 from typing import Union
 from simber import Logger
 from colorama import Fore, Style
 
-from ytmdl import (
+from musdl import (
     yt,
     song,
     stringutils,
@@ -13,10 +13,10 @@ from ytmdl import (
     manual,
     metadata
 )
-from ytmdl.exceptions import (
+from musdl.exceptions import (
     DownloadError, ConvertError, NoMetaError, MetadataError
 )
-from ytmdl.meta.yt import extract_meta_from_yt
+from musdl.meta.yt import extract_meta_from_yt
 
 
 logger = Logger("core")
@@ -188,11 +188,11 @@ def trim(name: str, args) -> None:
 
     logger.debug("Need to trim the song, importing the trim module.")
     try:
-        from ytmdl import trim
+        from musdl import trim
     except ImportError:
         logger.error("Dependencies needed for trim are not installed. "
                      "Please use the [noise-clean] specifier when "
-                     "installing ytmdl. The script will continue "
+                     "installing musdl. The script will continue "
                      "without trimming.")
         return
 

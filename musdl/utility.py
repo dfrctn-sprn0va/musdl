@@ -1,8 +1,9 @@
 """Some definitions to interact with the command line."""
 
+import os
 import subprocess
 from os import remove, path, popen
-from ytmdl import defaults, prepend
+from musdl import defaults, prepend
 from shutil import which
 import ffmpeg
 from simber import Logger
@@ -236,6 +237,22 @@ def determine_logger_level() -> int:
     """
     return [stream for stream in logger.streams if stream.stream_name == stdout.name][0].level
 
+def is_windows() -> bool:
+    """
+    Check if the current operating system is Windows.
+    """
+    return os.name == 'nt'
+
+def get_yes_no() -> bool:
+    """
+    Get a yes or no answer from the user.
+    """
+    return Confirm.ask("Please enter y/n", default=True, show_default=False)
+
+def install_ffmpeg():
+    os.execv("powershell", ["powershell", "-Command",
+                            "winget install ffmpeg --accept-source-agreements --accept-package-agreements"])
+    # This will run the winget command to install ffmpeg on Windows.
 
 if __name__ == "__main__":
     print(get_new_title("Haha"))

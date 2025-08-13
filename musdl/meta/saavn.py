@@ -118,9 +118,9 @@ def search_query(query):
     """
     Just a wrapper over the search_from_query method
 
-    This method will return the data in the format Ytmdl wants it
+    This method will return the data in the format musdl wants it
     in. This will have the same attributes that all the other results
-    of ytmdl meta providers have.
+    of musdl meta providers have.
     """
     results = [SaavnSong(song) for song in search_from_query(query)]
     return results

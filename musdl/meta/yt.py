@@ -8,9 +8,9 @@ from datetime import datetime
 from yt_dlp import YoutubeDL
 from simber import Logger
 
-from ytmdl.manual import Meta
-from ytmdl.utils.ytdl import get_ytdl_opts
-from ytmdl.exceptions import ExtractError
+from musdl.manual import Meta
+from musdl.utils.ytdl import get_ytdl_opts
+from musdl.exceptions import ExtractError
 
 # Create logger
 logger = Logger("meta:yt")

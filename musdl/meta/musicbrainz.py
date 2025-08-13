@@ -1,12 +1,12 @@
 """Module to handle meta fetch from musicbrainz"""
 
 import musicbrainzngs
-from ytmdl.__version__ import __version__
+from musdl.__version__ import __version__
 
 musicbrainzngs.set_useragent(
-    "ytmdl",
+    "musdl",
     __version__,
-    "https://github.com/deepjyoti30/ytmdl"
+    "https://github.com/deepjyoti30/musdl"
 )
 
 

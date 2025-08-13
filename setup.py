@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Setup ytmdl."""
+"""Setup musdl."""
 
 import setuptools
 from os import path
@@ -8,7 +8,7 @@ from warnings import warn
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-exec(open("ytmdl/__version__.py").read())
+exec(open("musdl/__version__.py").read())
 
 req_pkgs = [
     'yt-dlp>=2024.4.9',
@@ -40,8 +40,8 @@ extra_features = {
 
 # Add the distributable files
 file_map = [
-    ('/etc/bash_completion.d', 'ytmdl.bash'),
-    ('/usr/share/zsh/functions/Completion/Unix', 'ytmdl.zsh')
+    ('/etc/bash_completion.d', 'musdl.bash'),
+    ('/usr/share/zsh/functions/Completion/Unix', 'musdl.zsh')
 ]
 
 data_files = []
@@ -58,30 +58,28 @@ params = {
 
 if __name__ == '__main__':
     setuptools.setup(
-        name="ytmdl",
+        name="musdl",
         version=__version__,
-        author="Deepjyoti Barman",
-        author_email="deep.barma30@gmail.com",
+        author="DFR/TN SPRN0\\A",
         description="Youtube Music Downloader",
         long_description=long_description,
         long_description_content_type="text/markdown",
-        url="https://github.com/deepjyoti30/ytmdl",
+        url="https://github.com/dfrctn-sprn0va/musdl",
         packages=setuptools.find_packages(),
         classifiers=(
             "Programming Language :: Python :: 3",
-            "License :: OSI Approved :: MIT License",
             "Operating System :: OS Independent",
             "Development Status :: 5 - Production/Stable",
             "Environment :: Console",
             "Topic :: Multimedia :: Sound/Audio",
         ),
-        python_requires=">=3.6.2",
+        python_requires=">=3.12",
         install_requires=req_pkgs,
         setup_requires=req_pkgs,
         extras_require=extra_features,
         entry_points={
             'console_scripts': [
-                "ytmdl = ytmdl:entry"
+                "musdl = musdl:entry"
             ]
         },
         **params

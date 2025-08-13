@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-    * ytmdl.py - A script to download songs.
+    * musdl.py - A script to download songs.
 
 ----------------------------------------------------
      A simple script to download songs in mp3 format
@@ -19,7 +19,7 @@ import argparse
 from xdg.BaseDirectory import xdg_cache_home
 from os import path
 from simber import Logger
-from ytmdl import (
+from musdl import (
     dir,
     yt,
     defaults,
@@ -27,21 +27,21 @@ from ytmdl import (
     cache,
     utility,
 )
-from ytmdl.exceptions import (
+from musdl.exceptions import (
     DownloadError, ConvertError, NoMetaError, MetadataError,
     ExtractError
 )
-from ytmdl.core import (
+from musdl.core import (
     search, download, convert, trim, meta
 )
-from ytmdl.utils.archive import (
+from musdl.utils.archive import (
     open_archive_stream,
     is_present_in_archive,
     add_song_to_archive
 )
-from ytmdl.utils.ytdl import is_ytdl_config_present
-from ytmdl.yt import is_yt_url
-from ytmdl.__version__ import __version__
+from musdl.utils.ytdl import is_ytdl_config_present
+from musdl.yt import is_yt_url
+from musdl.__version__ import __version__
 from typing import Tuple
 
 # init colorama for windows
@@ -49,8 +49,8 @@ init()
 
 LOGGER_OUTTEMPLATE = " %a{}==>{}%".format(Style.BRIGHT, Style.RESET_ALL)
 LOGGER_FILEFORMAT = "[{logger}]:[{time}]: "
-logger = Logger('ytmdl',
-                log_path=path.join(xdg_cache_home, 'ytmdl/logs/log.cat'),
+logger = Logger('musdl',
+                log_path=path.join(xdg_cache_home, 'musdl/logs/log.cat'),
                 format=LOGGER_OUTTEMPLATE,
                 file_format=LOGGER_FILEFORMAT,
                 update_all=True
@@ -256,7 +256,12 @@ def main(args):
 
     # Check if ffmpeg is installed.
     if not utility.is_present('ffmpeg'):
-        logger.critical("ffmpeg is not installed. Please install it!")
+        logger.warning("ffmpeg is not installed. Please install it!")
+        # If windows
+        if utility.is_windows():
+            logger.warning("Do you want to install it now? (y/n)")
+            if utility.get_yes_no():
+                utility.install_ffmpeg()
 
     passed_format = args.format.lower()
 
@@ -512,7 +517,7 @@ def pre_checks(args):
 
     if not args.SONG_NAME and not args.url and not args.list:
         logger.critical(
-            "Song Name is required. Check 'ytmdl --help' for help.")
+            "Song Name is required. Check 'musdl --help' for help.")
 
 
 def extract_song_name(args) -> Tuple[str, bool]:

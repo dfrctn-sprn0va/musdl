@@ -7,7 +7,7 @@ from xdg.BaseDirectory import xdg_config_home
 
 
 config_text = '''#*****************************************#
-#*-------------config for ytmdl-----------#
+#*-------------config for musdl-----------#
 #
 #-----------------------------------------#
 #------PLEASE DON\'T LEAVE ANY BLANK LINES---#
@@ -59,7 +59,7 @@ config_text = '''#*****************************************#
 # "{{supported_providers}}".
 # ---------
 #
-# Please check the github page of ytmdl for more information.
+# Please check the github page of musdl for more information.
 #
 #METADATA_PROVIDERS = "itunes, spotify, gaana"
 #
@@ -120,13 +120,13 @@ class DEFAULTS:
         self.SONG_DIR = self._get_music_dir()
 
         # The temp dir
-        self.SONG_TEMP_DIR = os.path.join(self.SONG_DIR, 'ytmdl')
+        self.SONG_TEMP_DIR = os.path.join(self.SONG_DIR, 'musdl')
 
         # The default song quality
         self.SONG_QUALITY = '320'
 
         # The config path
-        self.CONFIG_PATH = os.path.join(xdg_config_home, 'ytmdl')
+        self.CONFIG_PATH = os.path.join(xdg_config_home, 'musdl')
 
         # The default metadata providers
         self.METADATA_PROVIDERS = ['itunes', 'spotify', 'gaana']
@@ -209,17 +209,17 @@ def make_config():
     # Remove the current config from SONG_TEMP_DIR
     config_path = os.path.join(DEFAULTS().CONFIG_PATH, 'config')
 
-    # Check if the ytmdl folder is present in config
+    # Check if the musdl folder is present in config
     if not os.path.isdir(DEFAULTS().CONFIG_PATH):
-        # Make the ytmdl folder
+        # Make the musdl folder
         os.makedirs(DEFAULTS().CONFIG_PATH, exist_ok=True)
 
     elif os.path.isfile(config_path):
         os.remove(config_path)
 
-    # Check if the ytmdl folder is present in Music directory
+    # Check if the musdl folder is present in Music directory
     if not os.path.isdir(DEFAULTS().SONG_TEMP_DIR):
-        # Make the ytmdl folder
+        # Make the musdl folder
         os.makedirs(DEFAULTS().SONG_TEMP_DIR)
 
     # Now write the config text to config file
@@ -261,7 +261,7 @@ def check_config_setup():
     # that the config is not setup.
     DEFAULT_CONF_PATH = DEFAULTS().CONFIG_PATH
 
-    # Check if ytmdl config directory is present
+    # Check if musdl config directory is present
     if not os.path.isdir(DEFAULT_CONF_PATH):
         return False
 
@@ -397,4 +397,4 @@ if __name__ == '__main__':
         with open("examples/config", 'w') as write_config:
             write_config.write(render_config_template())
     except Exception:
-        print("You need to run this script in root directory of ytmdl")
+        print("You need to run this script in root directory of musdl")

@@ -7,16 +7,16 @@ from urllib.parse import urlparse, parse_qs
 import yt_dlp
 from yt_dlp.utils import DownloadError
 from re import match, sub
-from ytmdl import defaults, utility, stringutils
+from musdl import defaults, utility, stringutils
 from downloader_cli.download import Download
 import traceback
 from sys import stdout
 from simber import Logger
-from ytmdl.exceptions import ExtractError
-from ytmdl.utils.ytmusic import get_title_from_ytmusic
+from musdl.exceptions import ExtractError
+from musdl.utils.ytmusic import get_title_from_ytmusic
 from youtubesearchpython import VideosSearch
 from typing import List
-from ytmdl.utils.ytdl import ydl_opts_with_config
+from musdl.utils.ytdl import ydl_opts_with_config
 
 
 logger = Logger("yt")
@@ -107,7 +107,7 @@ def dw_using_yt(
     # opus if dont_convert is passed.
     #
     # Idea is to convert the audio through yt-dlp instead
-    # of using ffmpeg which is the format ytmdl uses.
+    # of using ffmpeg which is the format musdl uses.
     #
     # Replace `.opus` with `.webm` from the file since otherwise
     # yt-dlp thinks that the file is converted.
@@ -152,7 +152,7 @@ def dw_using_yt(
 def dw(
         value,
         proxy=None,
-        song_name='ytmdl_temp.mp3',
+        song_name='musdl_temp.mp3',
         datatype='mp3',
         no_progress=False,
         ytdl_config: str = None,
@@ -165,7 +165,7 @@ def dw(
 
     The song can be downloaded in various types.
 
-    Default type is mp3 as ytmdl was solely designed to download
+    Default type is mp3 as musdl was solely designed to download
     MP3 songs, however due to user requests other formats are
     added.
     """

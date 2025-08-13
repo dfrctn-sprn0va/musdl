@@ -1,4 +1,4 @@
-"""Store all the exceptions related to ytmdl that might
+"""Store all the exceptions related to musdl that might
 arise during the runtime of the app
 """
 

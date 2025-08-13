@@ -43,7 +43,7 @@ def get_more_data(song):
     according get the extra required data from the API.
     """
     headers = {
-        "User-Agent": "ytmdl"
+        "User-Agent": "musdl"
     }
     payload = {
         "api_key": API_KEY,
@@ -79,7 +79,7 @@ def searchSong(query, lim=40):
     """Search the song using the last.fm API
     """
     headers = {
-        "User-Agent": "ytmdl"
+        "User-Agent": "musdl"
     }
     payload = {
         "api_key": API_KEY,

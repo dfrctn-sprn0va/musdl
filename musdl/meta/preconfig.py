@@ -2,9 +2,9 @@
 Handle all the preconfigurations related to metadata
 """
 
-from ytmdl.meta import deezer
-from ytmdl.meta import lastfm
-from ytmdl.meta import musicbrainz
+from musdl.meta import deezer
+from musdl.meta import lastfm
+from musdl.meta import musicbrainz
 
 
 class CONFIG:

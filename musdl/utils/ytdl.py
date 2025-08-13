@@ -7,7 +7,7 @@ from simber import Logger
 from typing import Dict
 from yt_dlp import parse_options
 
-from ytmdl import utility
+from musdl import utility
 
 
 # Create logger

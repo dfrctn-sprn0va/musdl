@@ -1,7 +1,7 @@
 language: python
 python: 
-  - "3.6"
+  - "3.12"
 
 cache: pip
 script:
-  - pip install ytmdl
+  - pip install git+https://github.com/dfrctn-sprn0va/musdl.git
